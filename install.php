@@ -9,7 +9,7 @@ $dbConfig = include('/config/db_params.php');
 
 $aTables = array(
 	'users' => array("id int(11) NOT NULL AUTO_INCREMENT,
-	group_id int(11) NOT NULL DEFAULT '2',
+	group_id int(11) NOT NULL DEFAULT '10',
 	name varchar(128) NOT NULL,
 	password varchar(50) NOT NULL,
 	email varchar(50) NOT NULL,
@@ -112,8 +112,15 @@ function isTableExist ($table) {
 }
 ?>
 
-<?php include '/views/layouts/header.php'; ?>
-
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Install</title>
+	<link rel="stylesheet" href="/template/css/bootstrap-cosmo.css">
+</head>
+<body>
 <div class="container">
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3">
@@ -134,6 +141,3 @@ function isTableExist ($table) {
 		</div>
 	</div>
 </div>
-
-<?php include '/views/layouts/footer.php'; ?>
-

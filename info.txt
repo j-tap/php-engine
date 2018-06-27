@@ -22,3 +22,5 @@ class controller
 
 
 
+Logger::$PATH = ROOT.'/log';
+Logger::getLogger('nameLogFile')->log('text log info');

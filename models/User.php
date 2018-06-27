@@ -170,7 +170,7 @@ class User {
 	// Выход
 	public static function logout () {
 		if (isset($_SESSION['user'])) {
-			self::setUserById ('isauth', '0', $_SESSION['user']);
+			self::setUserById ('isauth', 0, $_SESSION['user']);
 			unset($_SESSION['user']);
 			header("location: /");
 		}
@@ -233,8 +233,8 @@ class User {
 	}
 
 	// Запись в определённые поля по id 
-	public static function setUserById ($field, $value, $id) {
-		if ($field && $value && $id) {
+	public static function setUserById ($field, $value = 0, $id) {
+		if ($field && $id) {
 			$field = "`".str_replace("`","``",$field)."`";
 
 			$db = Db::getConnection();
